@@ -20,9 +20,8 @@ int adq(int a){
 }
 
 int dgt(int a, int b){
-    if(b <= 0){
+    if(b == 0){
         return a;
     }
-    a %= b;
-    return dgt(b, a);
+    return dgt(b, a % b);
 }
