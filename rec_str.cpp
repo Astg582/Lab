@@ -1,4 +1,6 @@
-#include<iostream>
+#include <iostream>
+#include <cmath>
+
 int jef(char arr[]);
 void revers(char arr[], int, int);
 
@@ -8,13 +10,24 @@ void foo (char* arr, int size){
     if((size - 1) == x){
         return;
     }
-
     std::swap(*arr, arr[size - 2]);
     foo(arr + 1, size - 1);
 }
-
-
+void Rec(int a){
+    if(a == 0){
+        std::cout << a << std::endl;
+        return;
+    }
+    std::cout << a << ' ';
+    Rec(a - (abs(a) / a));
+}
 int main(){
+    int m = 0;
+    std::cin >> m;
+    Rec(m);
+}
+
+/*int main(){
     const int s = 10;
     char arr[s];
     std::cin >> arr;
@@ -23,7 +36,7 @@ int main(){
     foo(arr, s);
     std::cout << arr << std::endl;
 }
-
+*/
 void revers(char arr[], int i, int j){
     
     if(i >= j){
@@ -41,6 +54,3 @@ int jef(char arr[]){
         }
         return j;
 }
-
-
-
